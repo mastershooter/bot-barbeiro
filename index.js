@@ -48,6 +48,10 @@ async function enviarMensagemZap(telefone, mensagem) {
     message: mensagem,
   });
 }
+// ✅ Health check para Render
+app.get('/health', (req, res) => {
+  res.send('ok');
+});
 
 // Rota que o Z-API irá chamar
 app.post('/webhook', async (req, res) => {
